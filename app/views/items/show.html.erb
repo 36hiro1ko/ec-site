@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <p>商品名:</p>
+  <%= @item.name %>
+</p>
+
+<p>
+  <p>価格:</p>
+  <%= @item.prince %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

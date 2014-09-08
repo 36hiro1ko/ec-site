@@ -6,6 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = '9d25139a3ddd8a1e7234506e29b5a48852895ef1f1de7dd3c3020b7fc3c329bfe0b756f3c9332018bc96dd859c1906c3eb40b376759e62a3875b4afdc032d3ef'
 
+  config.sign_out_via = :get
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -21,7 +22,7 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
-  # ==> Configuration for any authentication mechanism
+  # ==> Configuration for any authentication mehanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
   # authenticating a user, both parameters are required. Remember that those

@@ -1,0 +1,29 @@
+<h1>商品一覧</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>価格</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.price %></td>
+        <td><%= link_to 'Show', admin_item %></td>
+        <td><%= link_to 'Edit', edit_admin_item_path(admin_item) %></td>
+        <td><%= link_to 'Destroy', admin_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_admin_item_path %>

@@ -6,7 +6,7 @@
 		      <li class="username">ようこそ<%= current_user.name %>さん</li>
 		  <% end %>
 		  <li><%= link_to "マイページ", "#" %></li>
-		  <li><%= link_to "ログアウト", [:destroy, :user_session] %></li>
+		  <li><%= link_to "ログアウト", destroy_user_session_path, :method => :delete %></li>
 		<% else %>
 		  <li><%= link_to "登録", [:new, :user_registration] %></li>
 		  <li><%= link_to "パスワード忘れ", [:new, :user_password] %></li>
