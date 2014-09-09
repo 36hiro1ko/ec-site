@@ -1,0 +1,8 @@
+<div align="center">
+    <b>EcSite</b>
+    <% if current_user %>
+        <% if current_user.name %>
+                          ようこそ<%= current_user.name %>さん
+        <% end %>
+    <% end %>
+<div>

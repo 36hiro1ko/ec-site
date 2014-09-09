@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.5'
-gem 'jpmobile'
+gem 'jpmobile', '~> 4.0.0'
 gem 'devise'
 gem 'web-app-theme'
-gem 'jquery-ui-rails'
-
+#gem 'jquery-ui-rails'
+gem 'nokogiri'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

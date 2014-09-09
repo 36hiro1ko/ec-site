@@ -1,0 +1,30 @@
+<div align="left">
+<font size="2">
+	&#xE6E2;<%= link_to "トップページ",{:controller => "/welcome", :action =>"index"},
+	{:accesskey => "1"} %><br/>
+    &#xE6E3;<%= link_to "商品一覧",{:controller => "/items", :action =>"index"},
+	{:accesskey => "2"} %><br/>
+    &#xE6E4;<%= link_to "送料・お支払について","#",
+	{:accesskey => "3"} %><br/>
+    &#xE6E5;<%= link_to "お問い合わせ","#",
+	{:accesskey => "4"} %><br/>
+	<% if current_user %>
+	    &#xE6E6;<%= link_to "マイページ", "#",
+	    {:accesskey => "5"}%><br/>
+	    &#xE6E7;<%= link_to "ログアウト", [:destroy, :user_session],
+	    {:accesskey => "6"}%><br/>
+	<% else %>
+	    &#xE6E6;<%= link_to "登録", [:new, :user_registration],
+	    {:accesskey => "5"} %><br/>
+	    &#xE6E7;<%= link_to "パスワード忘れ", "#",
+	    {:accesskey => "6"} %><br/>
+	    &#xE6E8;<%= link_to "登録確認メール再送信", "#",
+	    {:accesskey => "7"} %><br/>
+	<% end %>
+</font>
+</div>
+<div align="center">
+	<font size="2">
+		(C) EcSite, inc. <%= Time.now.year %>
+	</font>
+</div>

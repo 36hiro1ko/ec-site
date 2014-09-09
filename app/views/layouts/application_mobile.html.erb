@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>ECSite</title>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= render :partial => "layouts/header" %>
+		<% if notice %>
+		    <font color="red"><%= notice %></font>
+		<% end %>
+		<% if alert %>
+		    <font color="blue"><%= alert %></font>
+		<% end %>
+		<%= yield %>
+		<%= render :partial => "layouts/footer" %>
+	</body>
+</html>
