@@ -19,6 +19,13 @@
 			<% end %>
 		</td>
 	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<%= form_tag(purchase_start_url, :method => 'get')do %>
+			<%= submit_tag '購入する' %>
+			<% end %>
+		</td>
+	</tr>
 </table>
 
 <%= link_to '一覧へ',items_path %>

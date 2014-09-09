@@ -15,5 +15,10 @@
 			</button>
 			<% end %>			
 		</div>
+		<%= form_tag(purchase_start_url, :method => 'get') do %>
+		    <%= submit_tag '購入する', :class => "ul-btn-hidden",
+		                              "aria-disabled" => "false",
+		                              "data-theme" => "a"%>
+		<% end %>
 	</li>
 </ul>

@@ -19,4 +19,9 @@
 		<th class="name">合計金額</th>
 		<th class="price"><%= @items.inject(0){|sum,item| sum + item.price} %></th>
 	</tr>
+	<tr>
+		<td colspan="2" class="name" style="text-align: center;">
+			<%= link_to '購入する', purchase_start_url %>
+		</td>
+	</tr>
 </table>

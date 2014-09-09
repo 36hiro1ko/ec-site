@@ -1,5 +1,9 @@
 EcSite::Application.routes.draw do
 
+  controller :purchase do
+    match "purchase/index" => 'purchase#index', :as => 'purchase_start', :via => 'get'
+  end
+
   controller :cart do
     match 'cart/add' => 'cart#add', :as => 'add_cart', :via => 'put'
     match 'cart/delete' => 'cart#delete', :as => 'delete_cart', :via => 'put'
