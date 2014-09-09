@@ -96,4 +96,51 @@ clear{
   }
 }
 
+table.table{
+  width: 100%;
+  margin-top: 15%;
+  tr.title{
+    background-color: #c0c0c0;
+    th{
+      font-weight: bold;
+      font-size: 140%;
+      padding: 5px;
+    }
+  }
+  tr{
+    th.name{
+      width: 70%;
+    }
+    th.price{
+      width: 15%;
+    }
+    th.detail{
+      width: 15%;
+    }
+    td{
+      padding: 5px;
+    }
+    td.name{
+      font-size: 200%;
+    }
+    td.price{
+      font-size: 150%;
+      text-align: right;
+    }
+    td.detail{
+      font-size: 200%;
+      text-align: center;
+      padding: 0;
+      a{
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+      }
+    }
+  }
+  tr.even{
+    background-color: #eaeaff;
+  }
+  
+}
 

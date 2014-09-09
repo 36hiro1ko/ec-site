@@ -5,6 +5,8 @@ gem 'rails', '4.0.5'
 gem 'jpmobile'
 gem 'devise'
 gem 'web-app-theme'
+gem 'jquery-ui-rails'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

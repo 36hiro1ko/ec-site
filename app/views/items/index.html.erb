@@ -1,21 +1,17 @@
 <h1>商品一覧</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>商品名</th>
-      <th>価格</th>
-      <th></th>
-      <th></th>
-      <th></th>
+<table class="table">
+    <tr class="title">
+      <th class="name">商品名</th>
+      <th class="price">価格</th>
+      <th class="detail"></th>
     </tr>
-  </thead>
 
   <tbody>
     <% @items.each do |item| %>
-      <tr>
+      <tr class="<%= cycle('odd', 'even') %>">
         <td><%= item.name %></td>
-        <td><%= item.prince %></td>
+        <td><%= item.price %></td>
         <td><%= link_to '詳細', item %></td>
       </tr>
     <% end %>
@@ -24,4 +20,3 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>

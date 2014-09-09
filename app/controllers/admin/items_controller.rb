@@ -1,6 +1,6 @@
 class Admin::ItemsController < ApplicationController
-  before_action :set_admin_item, only: [:show, :edit, :update, :destroy]
-  layout 'admin'
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  #layout 'admin'
   # GET /admin/items
   # GET /admin/items.json
   def index
@@ -11,6 +11,7 @@ class Admin::ItemsController < ApplicationController
   # GET /admin/items/1
   # GET /admin/items/1.json
   def show
+
   end
 
   # GET /admin/items/new
@@ -27,7 +28,7 @@ class Admin::ItemsController < ApplicationController
   # POST /admin/items.json
   def create
     #@admin_item = Admin::Item.new(admin_item_params)
-    @item = Item.new(admin_item_params)
+    @item = Item.new(item_params)
 
 =begin
 respond_to do |format|
@@ -43,11 +44,11 @@ end
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @item }
+        format.html { redirect_to [:admin, @item], notice: 'Item was successfully created.' }
+        format.json { render action: 'show', status: :created, location: [:admin,@item] }
       else
         format.html { render action: 'new' }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        format.json { render json: [:admin, @item].errors, status: :unprocessable_entity }
       end
     end
 
@@ -68,12 +69,12 @@ end
 end
 =end
     respond_to do |format|
-      if @item.update(admin_item_params)
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+      if @item.update(item_params)
+        format.html { redirect_to [:admin,@item], notice: 'Item was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        format.json { render json: [:admin,@item].errors, status: :unprocessable_entity }
       end
     end
 
@@ -99,13 +100,13 @@ end
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_admin_item
+  def set_item
     #@admin_item = Admin::Item.find(params[:id])
     @item = Item.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def admin_item_params
+  def item_params
     #params.require(:admin_item).permit(:name, :price)
     params.require(:item).permit(:name, :price)
   end
