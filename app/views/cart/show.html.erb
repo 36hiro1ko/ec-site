@@ -1,0 +1,22 @@
+<% if notice %>
+   <%= notice %>
+<% end %>
+
+<h1>カート</h1>
+
+<table class="table">
+	<tr class="title">
+		<th class="name">商品名</th>
+		<th class="price">価格</th>
+	</tr>
+	<% @items.each do |item| %>
+		<tr class="<%= cycle('odd', 'even')%>" >
+			<td class="name"><%= item.name %></td>
+			<td class="price"><%= item.price %></td>
+		</tr>	
+	<% end %>
+	<tr class="title">
+		<th class="name">合計金額</th>
+		<th class="price"><%= @items.inject(0){|sum,item| sum + item.price} %></th>
+	</tr>
+</table>

@@ -1,0 +1,19 @@
+<ul data-role="listview">
+	<li data-theme="C" class="ui-btn ui-btn-icon-right ui-li ui-btn-up-c">
+		<div class="ui-btn-inner ui-li">
+			<div class="ui-btn-text">
+				<a href="index.html" class="ui-link-inherit">
+				    <p class="ui-li-aside ui-li-desc">
+					&yen; <strong><%= @item.price %></strong>
+				    </p> 
+				</a>
+			</div>
+			<%= form_tag(add_cart_url, :method => 'put') do %>
+			<%= hidden_field_tag :item_id, @item.id %>
+			<button type="submit" data-theme="a" class="ui-btn-hidden" ariadisabled="false">
+				カートへ追加する
+			</button>
+			<% end %>			
+		</div>
+	</li>
+</ul>

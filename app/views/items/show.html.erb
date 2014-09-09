@@ -1,13 +1,23 @@
-<p id="notice"><%= notice %></p>
+<table width="100%">
 
-<p>
-  <p>商品名:</p>
-  <%= @item.name %>
-</p>
+<tr>
+  <td>商品名</td>
+  <td><%= @item.name %></td>
+</tr>
 
-<p>
-  <p>価格:</p>
-  <%= @item.price %>
-</p>
+<tr>
+  <td>価格:</td>
+  <td><%= @item.price %></td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<%= form_tag(add_cart_url, :method => 'put') do %>
+		  <%= hidden_field_tag :item_id, @item.id %>
+		  <%= submit_tag "カートへ追加する" %>
+		<% end %>
+	</td>
+</tr>
+</table>
 
-<%= link_to 'Back', items_path %>
+<%= link_to '一覧へ', items_path %>
+<br/>
