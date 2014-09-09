@@ -1,0 +1,21 @@
+<div data-role="navbar" >
+	<ul>
+		<li><%= link_to "トップページ", :controller => "/welcome", :action => "index" %></li>
+		<li><%= link_to "商品一覧", :controller => "/items", :action => "index" %></li>
+		<li><%= link_to "送料・お支払について", "#" %></li>
+		<li><%= link_to "お問い合わせ", "#" %></li>
+	<% if user_signed_in? %>
+	    <% if current_user.name %>
+	        <li class="username">ようこそ<%= current_user.name %>さん</li>
+	    <% end %>
+	        <li><%= link_to "マイページ", "#" %></li>
+	        <li><%= link_to "ログアウト", [:destroy, :user_session] %></li>	
+	<% else %>
+	    <li><%= link_to "ログイン", "#" %></li>
+	    <li><%= link_to "登録", "#" %></li>
+	    <li><%= link_to "パスワード忘れ", "#" %></li>
+	    <li><%= link_to "登録確認メール再送信", "#" %></li>
+	<% end %>
+	</ul>
+</div><!-- /navbar -->
+&copy: EcSite, inc. <%= Time.now.year %>

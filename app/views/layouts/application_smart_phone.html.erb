@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EcSite</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- <%= stylesheet_link_tag    "application", "data-turbolinks-track" => true %> -->
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<%= render :partial => "layouts/header" %>
+			</div>
+			
+			<div data-role="content">
+				<% if notice %>
+				    <p class="notice"><%= notice %></p>
+				<% end %>
+				<% if alert %>
+				    <p class="alert"><%= alert %></p>
+				<% end %>
+				<%= yield %>
+			</div>
+			
+			<div data-role="footer">
+				<%= render :partial => "layouts/footer" %>
+			</div><!-- /footer -->
+
+		</div>
+
+	</body>
+
+</html>
