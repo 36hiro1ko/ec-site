@@ -6,7 +6,7 @@ gem 'jpmobile', '~> 4.0.0'
 gem 'devise'
 gem 'web-app-theme'
 #gem 'jquery-ui-rails'
-gem 'nokogiri'
+#gem 'nokogiri'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
